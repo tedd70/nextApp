@@ -1,0 +1,10 @@
+<div class="each-school accordion">
+  <div [class.expanded]='isExpanded' class="accordion-heading" (click)='onClick()'>
+    School Name: {{ schoolData.name }}
+  </div>
+  <div class="accordion-body">
+    <div *ngFor="let eachClass of classesData">
+      <app-each-class [eachClass]="eachClass" *ngIf="isExpanded"></app-each-class>
+    </div>
+  </div>
+</div>

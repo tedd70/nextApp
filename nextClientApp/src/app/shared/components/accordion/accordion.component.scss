@@ -1,0 +1,19 @@
+.accordion { 
+  border:1px solid #ccc;
+  border-radius: 2px;
+
+  .accordion-heading {
+    font-weight: 800;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .accordion-body {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .expanded {
+    background: #f0f0f0;
+  }
+}

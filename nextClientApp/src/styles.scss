@@ -1,0 +1,28 @@
+html, body { 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto";
+}
+
+.accordion { 
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 560px;
+    margin: 0 auto;
+  
+    .accordion-heading {
+      font-weight: 800;
+      padding: 20px;
+      cursor: pointer;
+    }
+  
+    .accordion-body {
+      font-weight: 400;
+      flex-direction: column;
+    }
+  
+    .expanded {
+      background: #f0f0f0;
+    }
+  }

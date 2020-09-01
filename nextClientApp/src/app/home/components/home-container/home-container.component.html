@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+<div class="home-container">
+  <div> 
+    <div *ngFor="let school of schoolsData">
+      <app-school [schoolData]='school'></app-school>
+    </div>
+  </div>
+</div>

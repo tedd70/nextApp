@@ -1,0 +1,10 @@
+<div class="each-student accordion">
+  <div  [class.expanded]='isExpanded' class="accordion-heading" (click)='onClick()'>
+    Student Name: {{ student.name }}
+  </div>
+  <div class="accordion-body">
+    <div *ngFor="let mark of marksData">
+      <app-mark [markData]="mark" *ngIf="isExpanded"></app-mark>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- <div class="accordion">
+  <div [class.expanded]='isExpanded' class="accordion-heading" (click)='isExpanded=!isExpanded'>
+  </div>
+  <div class="accordion-body">
+    <div *ngFor="let school of schoolData">
+      <div (click)="getClasses(school)">{{school.name}}</div>
+      <div  *ngFor="let class of school.classes">
+        <app-each-class [model]="class"></app-each-class>
+      </div>
+      <div *ngIf="school.classes && school.classes.length>0 && school.isExpanded"> 
+        <div  *ngFor="let class of school.classes">
+          <div (click)="getStudents(class)">{{class.name}}</div>
+
+          <div *ngIf="class.students && class.students.length>0 && class.isExpanded"> 
+            <div  *ngFor="let student of class.students">
+              <div (click)="getMarks(student)">{{student.name}}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</div> -->

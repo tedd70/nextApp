@@ -1,0 +1,11 @@
+<div class="each-mark accordion">
+  <div class="accordion-heading" *ngIf="markData">
+    Marks,
+    Prof {{ markData.profName }} :
+    <div *ngIf="markData.values">
+      <div *ngFor="let value of markData.values">
+        {{ value }}
+      </div>
+    </div>
+  </div>
+</div>
