@@ -1,7 +1,13 @@
 <div class="each-student accordion">
-  <div  [class.expanded]='isExpanded' class="accordion-heading" (click)='onClick()'>
-    Student Name: {{ student.name }}
+  <div class="heading-and-editBtn">
+    <div  [class.expanded]='isExpanded' class="accordion-heading" (click)='onClick()'>
+      Student Name: {{ student.name }}
+    </div>
+    <button type="button" class="edit-data" (click)="openModal()">
+      <fa-icon [icon]="faEdit"></fa-icon>
+    </button>
   </div>
+  
   <div class="accordion-body">
     <div *ngFor="let mark of marksData">
       <app-mark [markData]="mark" *ngIf="isExpanded"></app-mark>

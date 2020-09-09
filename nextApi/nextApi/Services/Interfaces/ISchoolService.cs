@@ -1,7 +1,7 @@
 ﻿using nextApi.Models;
 using System.Collections.Generic;
 
-namespace nextApi.Services
+namespace nextApi.Services.Interfaces
 {
     public interface ISchoolService
     {

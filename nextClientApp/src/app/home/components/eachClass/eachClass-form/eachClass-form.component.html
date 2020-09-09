@@ -1,0 +1,12 @@
+<div class="eachClass-form">
+  <h2 mat-dialog-title>Add New Student</h2>
+  <div>
+    <input type="text" [(ngModel)]="data.name" class="eachClass-form-input" />
+  </div>
+  <mat-dialog-actions ALIGN="end">
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" [disabled]=!data.name>
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

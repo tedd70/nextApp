@@ -1,7 +1,7 @@
 ﻿using nextApi.Models;
 using System.Collections.Generic;
 
-namespace nextApi.Controllers
+namespace nextApi.Services.Interfaces
 {
     public interface IClassService
     {

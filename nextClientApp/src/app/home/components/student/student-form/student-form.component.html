@@ -1,0 +1,12 @@
+<div class="student-form">
+  <h2 mat-dialog-title>Edit Student</h2>
+  <div>
+    <input type="text" [(ngModel)]="data.name" class="student-form-input" />
+  </div>
+  <mat-dialog-actions ALIGN="end">
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-button cdkFocusInitial (click)="updateStudentName()">
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

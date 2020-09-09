@@ -1,8 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html, body { 
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "Roboto";
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .accordion { 
@@ -10,19 +12,40 @@ html, body {
     border-radius: 2px;
     width: 560px;
     margin: 0 auto;
+
+    .heading-and-editBtn {
+      display: flex;
+      align-items: center;
+      margin: 0 16px;
+    }
   
     .accordion-heading {
-      font-weight: 800;
       padding: 20px;
       cursor: pointer;
     }
-  
+
     .accordion-body {
       font-weight: 400;
       flex-direction: column;
     }
-  
+
     .expanded {
       background: #f0f0f0;
+    }
+}
+
+  .edit-data {
+    background-color: white;
+    color: #1976d2;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+    outline: 0;
+
+    &:hover {
+      background-color: white;
+      color: gray;
+      transition: ease-in-out 0.4s;
     }
   }

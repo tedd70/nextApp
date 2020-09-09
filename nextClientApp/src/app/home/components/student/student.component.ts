@@ -1,7 +1,11 @@
 import { Component, Input } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { faEdit, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 // Services 
 import { HomeService } from '../../services/home.service';
+import { StudentFormComponent } from './student-form/student-form.component';
+import { MarkFormComponent } from '../mark/mark-form/mark-form.component';
 
 @Component({
   selector: "app-student",
@@ -14,8 +18,11 @@ export class StudentComponent {
 
   public marksData;
   public isExpanded: boolean;
+  public faEdit = faEdit;
+  public faPlusCircle = faPlusCircle;
 
   constructor(
+    public dialog: MatDialog,
     private homeService: HomeService
   ) { }
 
@@ -24,7 +31,6 @@ export class StudentComponent {
 
     if(this.isExpanded) {
       this.homeService.getMarksData(this.student.id).subscribe((data: Array<any>) => {
-
         let result = [];
         data.forEach(x => {
           result[x.profId] = {
@@ -38,5 +44,19 @@ export class StudentComponent {
         this.marksData = result;
       });
     }
+  }
+
+  openModal(): void {
+    let dialogRef = this.dialog.open(StudentFormComponent, {
+      height: "200px",
+      width: "400px",
+      data: this.student,
+      disableClose: true
+    });
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (typeof result !== "undefined") {
+        this.student.name = result;
+      }
+    });
   }
 }

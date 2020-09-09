@@ -4,13 +4,14 @@
     margin-bottom: 40px;
 
     .headerTitle {
-      font-weight: bold;
       text-transform: capitalize;
       color: white;
       margin: 0;
       padding: 16px 0;
-      display:flex;
+      display: flex;
       justify-content: center;
+      font-style: italic;
+      font-size: 24px;
     }
   }
   

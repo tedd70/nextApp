@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using nextApi.Services;
+using nextApi.Services.Interfaces;
 
 namespace nextApi.Controllers
 {

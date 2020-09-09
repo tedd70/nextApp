@@ -1,5 +1,6 @@
 ﻿using nextApi.Models;
 using nextApi.Repositories;
+using nextApi.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,6 +13,21 @@ namespace nextApi.Services
         public StudentService(NextDbContext context)
         {
             _context = context;
+        }
+        public Student CreateStudent(Student student)
+        {
+            var existingStudent = _context.Students.FirstOrDefault(x => x.Id == student.Id);
+            if (existingStudent == null)
+            {
+                _context.Students.Add(student);
+            }
+            else
+            {
+                existingStudent.Name = student.Name;
+                _context.Students.Update(existingStudent);
+            }
+            _context.SaveChanges();
+            return student;
         }
         public List<Student> GetAll()
         {

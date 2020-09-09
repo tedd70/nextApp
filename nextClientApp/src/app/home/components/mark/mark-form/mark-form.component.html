@@ -1,0 +1,12 @@
+<div class="mark-form">
+  <h2 mat-dialog-title>Add New Mark</h2>
+  <div>
+    <input type="text" class="mark-form-input" [(ngModel)]="data.value"/>
+  </div>
+  <mat-dialog-actions ALIGN="end">
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" [disabled]=!data.value>
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

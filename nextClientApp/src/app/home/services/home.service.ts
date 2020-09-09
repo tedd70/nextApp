@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { SchoolInterface } from '../bussiness/interfaces/school.interface';
+import { StudentInterface } from '../bussiness/interfaces/student.interface';
 
 @Injectable({
   providedIn: "root"
@@ -23,10 +24,19 @@ export class HomeService {
   }
 
   public getStudentsData(classId) {
-    return this.http.get(`https://localhost:44370/Students?classId=${classId}`)
+    return this.http.get<StudentInterface[]>(`https://localhost:44370/Students?classId=${classId}`)
   }
 
   public getMarksData(studentId) {
     return this.http.get(`https://localhost:44370/Mark?studentId=${studentId}`);
+  }
+
+
+  public createOrUpdateStudent(student) {
+    return this.http.post(`https://localhost:44370/Students`, student);
+  }
+
+  public addNewMark(markValue) {
+    return this.http.post(`https://localhost:44370/Mark`, markValue);
   }
 }

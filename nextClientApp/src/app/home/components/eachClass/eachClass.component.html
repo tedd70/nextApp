@@ -7,4 +7,12 @@
       <app-student [student]="student" *ngIf="isExpanded"></app-student>
     </div>
   </div>
+
+  <button 
+    *ngIf="studentsData && studentsData.length < 30 && isExpanded" 
+    class="add-student-btn"
+    (click)="openModal()"
+    >
+    Add new student <fa-icon [icon]="faPlusCircle"></fa-icon>
+  </button>
 </div>
